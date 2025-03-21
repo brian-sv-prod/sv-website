@@ -4,9 +4,6 @@
   logo: /assets/images/portfolio/datasense.svg
   website: https://example.com/datasense
   tags:
-    - AI
-    - Machine Learning
-    - Enterprise SaaS
 
 - name: FinFlow
   description: API-first banking platform for modern fintech applications.
@@ -14,9 +11,6 @@
   logo: /assets/images/portfolio/finflow.svg
   website: https://example.com/finflow
   tags:
-    - Fintech
-    - Banking API
-    - Payments
 
 - name: MedTech Solutions
   description: AI-powered diagnostic tools for radiology departments.
@@ -24,9 +18,6 @@
   logo: /assets/images/portfolio/medtech.svg
   website: https://example.com/medtech
   tags:
-    - Health Tech
-    - AI Diagnostics
-    - Medical Imaging
 
 - name: CloudScale
   description: Infrastructure automation platform for multi-cloud deployments.
@@ -34,9 +25,6 @@
   logo: /assets/images/portfolio/cloudscale.svg
   website: https://example.com/cloudscale
   tags:
-    - SaaS
-    - Cloud Infrastructure
-    - DevOps
 
 - name: SecureID
   description: Zero-trust identity management solution for enterprises.
@@ -44,9 +32,6 @@
   logo: /assets/images/portfolio/secureid.svg
   website: https://example.com/secureid
   tags:
-    - Security
-    - Identity Management
-    - Enterprise
 
 - name: RetailAI
   description: Predictive analytics platform for retail inventory management.
@@ -54,9 +39,6 @@
   logo: /assets/images/portfolio/retailai.svg
   website: https://example.com/retailai
   tags:
-    - AI
-    - Retail Tech
-    - Predictive Analytics
 
 - name: PaymentHub
   description: Global payment processing solution with built-in fraud detection.
@@ -64,9 +46,6 @@
   logo: /assets/images/portfolio/paymenthub.svg
   website: https://example.com/paymenthub
   tags:
-    - Fintech
-    - Payments
-    - Fraud Prevention
 
 - name: TeleHealth Connect
   description: Virtual healthcare delivery platform with integrated EHR.
@@ -74,9 +53,6 @@
   logo: /assets/images/portfolio/telehealth.svg
   website: https://example.com/telehealth
   tags:
-    - Health Tech
-    - Telemedicine
-    - Healthcare IT
 
 - name: CodeFlow
   description: Developer tools platform for automated code review and testing.
@@ -84,7 +60,4 @@
   logo: /assets/images/portfolio/codeflow.svg
   website: https://example.com/codeflow
   tags:
-    - SaaS
-    - Developer Tools
-    - DevOps
 
