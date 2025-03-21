@@ -23,7 +23,7 @@ collections:
     output: true
 
 # Blog permalink
-permalink: /blog/:title/
+permalink: /sv-website/blog/:title/
 
 # Default front matter
 defaults:
