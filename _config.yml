@@ -1,8 +1,8 @@
 # Site settings
-title: VC Fund
+title: Service Ventures
 email: info@vcfirm.com
 description: >-
-  A venture capital firm investing in exceptional founders building the future of technology.
+  A Credit Union Venture Capital Firm.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://brian-sv-prod.github.io/sv-website" # the base hostname & protocol for your site, e.g. http://example.com
 
