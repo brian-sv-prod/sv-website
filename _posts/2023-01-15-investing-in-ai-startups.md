@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Future of AI Startups: Investment Trends and Opportunities"
+title: "Investing In AI Startups"
 author: "Jane Smith"
 author_title: "Managing Partner"
 date: 2023-01-15
