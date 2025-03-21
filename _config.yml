@@ -25,12 +25,12 @@ collections:
 # Default front matter
 defaults:
   - scope:
-      path: ""
+      path: "/posts"
       type: "posts"
     values:
       layout: "post"
   - scope:
-      path: ""
+      path: "/portfoilio"
       type: "portfolio"
     values:
       layout: "portfolio"
