@@ -1,0 +1,161 @@
+---
+layout: default
+title: Portfolio
+---
+
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Our Portfolio</h1>
+      <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+        We partner with exceptional founders building category-defining companies across various sectors.
+      </p>
+      
+      <div class="mb-12">
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <button class="filter-button bg-white hover:bg-blue-600 hover:text-white text-gray-800 font-medium py-2 px-4 rounded-md transition duration-300 active" data-filter="all">
+            All
+          </button>
+          <button class="filter-button bg-white hover:bg-blue-600 hover:text-white text-gray-800 font-medium py-2 px-4 rounded-md transition duration-300" data-filter="saas">
+            SaaS
+          </button>
+          <button class="filter-button bg-white hover:bg-blue-600 hover:text-white text-gray-800 font-medium py-2 px-4 rounded-md transition duration-300" data-filter="fintech">
+            Fintech
+          </button>
+          <button class="filter-button bg-white hover:bg-blue-600 hover:text-white text-gray-800 font-medium py-2 px-4 rounded-md transition duration-300" data-filter="ai">
+            AI & ML
+          </button>
+          <button class="filter-button bg-white hover:bg-blue-600 hover:text-white text-gray-800 font-medium py-2 px-4 rounded-md transition duration-300" data-filter="health">
+            Health Tech
+          </button>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        {% for company in site.data.portfolio %}
+        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="{{ company.category }}">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3>
+          <p class="text-gray-600 mb-4">{{ company.description }}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {% for tag in company.tags %}
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% if company.website %}
+          <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Investment Criteria</h2>
+      <p class="text-lg text-gray-600 mb-10">
+        We look for exceptional founding teams with the vision and capability to build transformative companies.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg text-left">
+          <h3 class="text-xl font-semibold mb-3">What We Look For</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Strong founding team with domain expertise
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Disruptive technology or business model
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Large addressable market opportunity
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Early traction or proof of concept
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg text-left">
+          <h3 class="text-xl font-semibold mb-3">Investment Focus</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Seed and Series A rounds
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Initial investments between $1-5 million
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Technology sectors: SaaS, Fintech, AI/ML, Health Tech
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              North America, Europe, and select global markets
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-12">
+        <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+          Pitch Your Startup
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Remove active class from all buttons and add to clicked button
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+        this.classList.add('active', 'bg-blue-600', 'text-white');
+        
+        // Filter portfolio items
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+

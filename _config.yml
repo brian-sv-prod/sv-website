@@ -1,0 +1,57 @@
+# Site settings
+title: VC Fund
+email: info@vcfirm.com
+description: >-
+  A venture capital firm investing in exceptional founders building the future of technology.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://vcfirm.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Pagination settings
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  portfolio:
+    output: true
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Include specific files/folders
+include:
+  - _pages
+  
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - package.json
+  - package-lock.json
+

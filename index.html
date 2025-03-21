@@ -1,0 +1,105 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero bg-gray-50 py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <h1 class="text-5xl font-bold text-gray-900 mb-6">Investing in tomorrow's innovations</h1>
+      <p class="text-xl text-gray-600 mb-8">We partner with exceptional founders building the next generation of technology companies.</p>
+      <a href="/portfolio" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+        View Our Portfolio
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Investment Focus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Early Stage</h3>
+          <p class="text-gray-600">Seed and Series A investments in companies with visionary founders and strong market potential.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Technology First</h3>
+          <p class="text-gray-600">Deep tech, artificial intelligence, machine learning, and next-generation software platforms.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Global Reach</h3>
+          <p class="text-gray-600">Supporting innovative companies across North America, Europe, and emerging markets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Recent Investments</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for company in site.data.featured_companies limit:3 %}
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3>
+          <p class="text-gray-600 mb-4">{{ company.description }}</p>
+          <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ company.industry }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="mt-10">
+        <a href="/portfolio" class="text-blue-600 hover:text-blue-800 font-medium">View all portfolio companies →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Approach</h2>
+          <p class="text-gray-600 mb-6">We don't just provide capital. We partner closely with founders to build category-defining companies through strategic guidance, operational support, and access to our global network.</p>
+          <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+            Get in Touch
+          </a>
+        </div>
+        <div class="md:w-5/12">
+          <img src="/assets/images/team-placeholder.jpg" alt="Team" class="rounded-lg shadow-md">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Latest Insights</h2>
+      <p class="text-gray-600 mb-10">Thoughts on technology, markets, and building successful companies.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for post in site.posts limit:2 %}
+        <a href="{{ post.url }}" class="bg-white p-6 rounded-lg shadow-sm text-left transition duration-300 hover:shadow-md">
+          <span class="text-sm text-gray-500">{{ post.date | date: "%B %-d, %Y" }}</span>
+          <h3 class="text-xl font-semibold my-2">{{ post.title }}</h3>
+          <p class="text-gray-600 mb-4">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          <span class="text-blue-600 font-medium">Read more →</span>
+        </a>
+        {% endfor %}
+      </div>
+      
+      <div class="mt-10">
+        <a href="/blog" class="text-blue-600 hover:text-blue-800 font-medium">View all blog posts →</a>
+      </div>
+    </div>
+  </div>
+</section>
+

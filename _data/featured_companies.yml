@@ -1,0 +1,20 @@
+- name: DataSense AI
+  description: Enterprise AI platform for automated data analysis and insights generation.
+  industry: AI & Machine Learning
+  logo: /assets/images/portfolio/datasense.svg
+
+- name: FinFlow
+  description: API-first banking platform for modern fintech applications.
+  industry: Fintech
+  logo: /assets/images/portfolio/finflow.svg
+
+- name: MedTech Solutions
+  description: AI-powered diagnostic tools for radiology departments.
+  industry: Health Tech
+  logo: /assets/images/portfolio/medtech.svg
+
+- name: CloudScale
+  description: Infrastructure automation platform for multi-cloud deployments.
+  industry: Cloud Infrastructure
+  logo: /assets/images/portfolio/cloudscale.svg
+
