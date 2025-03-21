@@ -25,7 +25,7 @@ collections:
 # Default front matter
 defaults:
   - scope:
-      path: "/posts"
+      path: "/blog"
       type: "posts"
     values:
       layout: "post"
