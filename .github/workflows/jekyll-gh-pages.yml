@@ -1,5 +1,9 @@
 name: Deploy Jekyll site to GitHub Pages
-
+run: |
+    bundle install
+    bundle exec jekyll build
+  env:
+    JEKYLL_ENV: production
 on:
   push:
     branches: [ main ]
