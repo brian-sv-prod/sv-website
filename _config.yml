@@ -5,6 +5,7 @@ description: >-
   A venture capital firm investing in exceptional founders building the future of technology.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://brian-sv-prod.github.io/sv-website/" # the base hostname & protocol for your site, e.g. http://example.com
+destination: _site # This should either be absent or set to "_site"
 
 # Build settings
 markdown: kramdown
