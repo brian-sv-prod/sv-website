@@ -3,8 +3,8 @@ title: VC Fund
 email: info@vcfirm.com
 description: >-
   A venture capital firm investing in exceptional founders building the future of technology.
-baseurl: "/sv-website" # the subpath of your site, e.g. /blog
-url: "https://brian-sv-prod.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://brian-sv-prod.github.io/sv-website" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
