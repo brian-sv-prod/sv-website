@@ -22,6 +22,9 @@ collections:
   portfolio:
     output: true
 
+# Blog permalink
+permalink: /sv-website/blog/:title/
+
 # Default front matter
 defaults:
   - scope:
