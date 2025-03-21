@@ -7,7 +7,6 @@ date: 2023-01-15
 categories: ["Artificial Intelligence", "Investment Trends"]
 tags: ["AI", "machine learning", "venture capital", "startups"]
 excerpt: "An analysis of the current AI startup landscape and where we see the most promising investment opportunities in 2023 and beyond."
-permalink: /sv-website/blog/future-of-ai/
 ---
 
 Artificial Intelligence continues to be one of the most transformative technologies of our time. As investors focused on the future of technology, we've been closely tracking the evolution of AI startups and identifying the most promising opportunities in this rapidly evolving space.
