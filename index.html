@@ -21,7 +21,7 @@ title: Home
       <h2 class="text-3xl font-bold text-gray-900 mb-8">Changing the FinTech Landscape</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for company in site.data.featured_companies limit:3 %}
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="bg-white p-6 py-3 px-6 rounded-lg shadow-lg border border-black">
           <div class="h-16 flex items-center justify-center mb-4">
             <img src="{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
           </div>
@@ -43,15 +43,15 @@ title: Home
     <div class="max-w-5xl mx-auto">
       <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Investment Focus</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
           <h3 class="text-xl font-semibold mb-3">Early Stage</h3>
           <p class="text-gray-600">Seed and Series A investments in companies with visionary founders and strong market potential.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
           <h3 class="text-xl font-semibold mb-3">Technology First</h3>
           <p class="text-gray-600">Deep tech, artificial intelligence, machine learning, and next-generation software platforms.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
           <h3 class="text-xl font-semibold mb-3">CUSOs</h3>
           <p class="text-gray-600">Mission driven to solve problems for Credit Unions and Credit Union Members.</p>
         </div>
