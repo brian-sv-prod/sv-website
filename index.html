@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<section class="hero bg-gray-50 py-16 md:py-48">
+<section class="hero bg-gray-200 py-16 md:py-72">
   <div class="container mx-auto px-5">
     <div class="max-w-3xl">
       <h1 class="text-5xl font-bold text-gray-900 mb-6">Leaders in Credit Union Venture Capital</h1>
@@ -15,32 +15,10 @@ title: Home
   </div>
 </section>
 
-<section class="py-32 bg-white">
-  <div class="container mx-auto px-5">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Investment Focus</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-xl font-semibold mb-3">Early Stage</h3>
-          <p class="text-gray-600">Seed and Series A investments in companies with visionary founders and strong market potential.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-xl font-semibold mb-3">Technology First</h3>
-          <p class="text-gray-600">Deep tech, artificial intelligence, machine learning, and next-generation software platforms.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-lg">
-          <h3 class="text-xl font-semibold mb-3">Global Reach</h3>
-          <p class="text-gray-600">Supporting innovative companies across North America, Europe, and emerging markets.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-32 bg-gray-50">
+<section class="py-48 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">Recent Investments</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Changing the FinTech Landscape</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for company in site.data.featured_companies limit:3 %}
         <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -54,12 +32,35 @@ title: Home
         {% endfor %}
       </div>
       <div class="mt-10">
-        <a href="/sv-website/portfolio" class="text-black-600 hover:text-black-800 font-medium">View all portfolio companies →</a>
+        <a href="/sv-website/portfolio" class="bg-black-600 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">View all portfolio companies →</a>
       </div>
     </div>
   </div>
 </section>
 
+<section class="py-48 bg-gray-200">
+  <div class="container mx-auto px-5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Investment Focus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Early Stage</h3>
+          <p class="text-gray-600">Seed and Series A investments in companies with visionary founders and strong market potential.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Technology First</h3>
+          <p class="text-gray-600">Deep tech, artificial intelligence, machine learning, and next-generation software platforms.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">CUSOs</h3>
+          <p class="text-gray-600">Mission driven to solve problems for Credit Unions and Credit Union Members.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
 <section class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-5xl mx-auto">
@@ -78,6 +79,7 @@ title: Home
     </div>
   </div>
 </section>
+-->
 
 <!--
 <section class="py-16 bg-gray-50">
