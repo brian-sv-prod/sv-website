@@ -8,14 +8,14 @@
 - name: FinFlow
   description: API-first banking platform for modern fintech applications.
   category: fintech
-  logo: /assets/images/portfolio/finflow.svg
+  logo: /assets/images/portfolio/modernficuso1.png
   website: https://example.com/finflow
   tags:
 
 - name: MedTech Solutions
   description: AI-powered diagnostic tools for radiology departments.
   category: health
-  logo: /assets/images/portfolio/medtech.svg
+  logo: /assets/images/portfolio/modernficuso1.png
   website: https://example.com/medtech
   tags:
 
