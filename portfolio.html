@@ -4,7 +4,7 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-<section class="py-16 md:py-24 bg-gray-50">
+<section class="py-16 md:py-24 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-5xl mx-auto">
       <h1 class="text-4xl font-bold text-black-900 mb-6 text-center">Our Portfolio</h1>
@@ -39,7 +39,7 @@ permalink: /portfolio/
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
         {% for company in site.data.portfolio %}
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="{{ company.category }}">
+        <div class="portfolio-item bg-gray-100 p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="{{ company.category }}">
           <div class="h-16 flex items-center justify-center mb-4">
             <img src="{{ company.logo | default: '/sv-website/assets/images/portfolio/modernficuso.jpg' }}" alt="{{ company.name }}" class="max-h-full">
           </div>
