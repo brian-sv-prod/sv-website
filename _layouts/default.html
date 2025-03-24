@@ -83,6 +83,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
   <body class="min-h-screen flex flex-col">
+    {% if page.show_announcement %}
   <!-- Stylish Announcement Banner -->
   <div id="announcement-banner" class="bg-gradient-to-r from-black-900 to-black-700 text-white py-3 px-4">
     <div class="container mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-between">
@@ -106,6 +107,7 @@
       </div>
     </div>
   </div>
+    {% endif %}
   <header class="bg-white shadow-sm">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
