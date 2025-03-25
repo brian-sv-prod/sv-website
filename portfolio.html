@@ -41,8 +41,8 @@ show_announcement: true
      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
       {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
       {% for company in sorted_companies %}
-      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="{{ company.category }}">
-        <div class="h-16 flex items-center justify-center mb-4">
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="{{ company.category }}">
+        <div class="h-16 mt-2 flex items-center justify-center mb-2">
           {% if company.website %}
           <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
             <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
