@@ -5,18 +5,18 @@
   website: https://modernfi.com/cuso
   tags:
 
-- name: FinFlow
-  description: API-first banking platform for modern fintech applications.
-  category: fintech
+- name: Larky
+  description: Meet your account holders where they are and accomplish more, faster.
+  category: FinTech
   logo: /assets/images/portfolio/modernficuso1.png
-  website: https://example.com/finflow
+  website: https://https://nudge.larky.com/
   tags:
 
-- name: MedTech Solutions
-  description: AI-powered diagnostic tools for radiology departments.
-  category: health
+- name: WealthCabinet
+  description: Modern WealthTech Solution and Infrastructure built for Credit Unions.
+  category: Investing
   logo: /assets/images/portfolio/modernficuso1.png
-  website: https://example.com/medtech
+  website: https://wealthcabinet.com/
   tags:
 
 - name: CloudScale
