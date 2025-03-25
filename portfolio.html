@@ -41,7 +41,7 @@ show_announcement: true
      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
       {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
       {% for company in sorted_companies %}
-      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg m-5" data-category="{{ company.category }}">
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="{{ company.category }}">
         <div class="h-16 flex items-center justify-center mb-2">
           {% if company.website %}
           <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
@@ -52,8 +52,8 @@ show_announcement: true
           {% endif %}
         </div>
         <!-- <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3> -->
-        <p class="text-gray-600 mt-4">{{ company.description }}</p>
-        <div class="flex flex-wrap gap-2 mb-4">
+        <p class="text-gray-600 mt-10">{{ company.description }}</p>
+        <div class="flex flex-wrap gap-2">
           {% for tag in company.tags %}
           <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
           {% endfor %}
