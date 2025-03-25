@@ -4,10 +4,10 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-<section class="py-16 md:py-24 bg-white">
-  <div class="container mx-auto px-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-4xl font-bold text-black-900 mb-6 text-center">Service Ventures Portfolio</h1>
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Service Ventures Portfolio</h1>
       
       <!--
       <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
@@ -38,26 +38,27 @@ permalink: /portfolio/
       -->
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-        {% for company in site.data.portfolio %}
-        <div class="portfolio-item bg-gray-100 p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl" data-category="{{ company.category }}">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="{{ site.baseurl }}{{ company.logo }}" alt="{{ company.name }}" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3>
-          <p class="text-gray-600 mb-4">{{ company.description }}</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            {% for tag in company.tags %}
-            <span class="inline-block bg-black-600 text-black-900 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          {% if company.website %}
-          <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="text-black-700 hover:text-black-900 font-medium">Visit website →</a>
-          {% endif %}
+      {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
+      {% for company in sorted_companies %}
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="{{ company.category }}">
+        <div class="h-16 flex items-center justify-center mb-4">
+          <img src="{{ site.baseurl }}{{ company.logo }}" alt="{{ company.name }}" class="max-h-full">
         </div>
-        {% endfor %}
+        <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3>
+        <p class="text-gray-600 mb-4">{{ company.description }}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          {% for tag in company.tags %}
+          <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% if company.website %}
+        <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+        {% endif %}
       </div>
+      {% endfor %}
     </div>
   </div>
+</div>
 </section>
 
 <section class="py-16 bg-white">
