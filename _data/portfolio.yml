@@ -3,6 +3,7 @@
   category: FinTech
   logo: /assets/images/portfolio/modernfi-cuso-official.jpg
   website: https://modernfi.com/cuso
+  featured: true
   tags:
 
 - name: Larky
@@ -10,6 +11,7 @@
   category: FinTech
   logo: /assets/images/portfolio/modernficuso1.png
   website: https://https://nudge.larky.com/
+  featured: true
   tags:
 
 - name: WealthCabinet
@@ -17,6 +19,7 @@
   category: Investing
   logo: /assets/images/portfolio/modernficuso1.png
   website: https://wealthcabinet.com/
+  featured: true
   tags:
 
 - name: CloudScale
