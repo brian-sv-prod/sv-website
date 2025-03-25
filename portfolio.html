@@ -38,30 +38,29 @@ show_announcement: true
       </div>
       -->
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-      {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
-      {% for company in sorted_companies %}
       <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="{{ company.category }}">
-        <div class="h-16 flex items-center justify-center mb-4">
-          <img src="{{ site.baseurl }}{{ company.logo }}" alt="{{ company.name }}" class="max-h-full">
-        </div>
-        <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3>
-        <p class="text-gray-600 mb-4">{{ company.description }}</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          {% for tag in company.tags %}
-          <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        {% if company.website %}
-        <!--
-        <a href="{{ company.website }}"rel="noopener noreferrer" class="bg-black-900 text-black-900 hover:bg-black-900 text-white font-medium py-3 px-6 rounded-md transition duration-300">Learn More
-        </a>
-        -->
-        {% endif %}
+  <div class="h-16 flex items-center justify-center mb-4 relative">
+    {% if company.website %}
+    <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" 
+       class="flex items-center justify-center w-full h-full group">
+      <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" 
+           alt="{{ company.name }}" 
+           class="max-h-full transition-transform duration-300 group-hover:scale-110">
+      <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-10 rounded transition-all duration-300 flex items-center justify-center">
+        <span class="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-medium">Visit Website</span>
       </div>
-      {% endfor %}
-    </div>
+    </a>
+    {% else %}
+    <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" 
+         alt="{{ company.name }}" 
+         class="max-h-full">
+    {% endif %}
   </div>
+  <!-- <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3> -->
+  <!-- Rest of your code -->
+  <!--{% if company.website %}
+  <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+  {% endif %} -->
 </div>
 </section>
 
