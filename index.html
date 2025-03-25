@@ -23,7 +23,7 @@ show_announcement: true
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% assign featured_companies = site.data.portfolio | where: "featured", true | sort: 'name' | limit: 3 %}
       {% for company in featured_companies %}
-      <div class="bg-white p-6 rounded-lg shadow-sm">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
         <div class="h-16 flex items-center justify-center mb-4">
           <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
         </div>
@@ -34,7 +34,7 @@ show_announcement: true
       {% endfor %}
     </div>
     <div class="mt-10">
-      <a href="/portfolio" class="text-blue-600 hover:text-blue-800 font-medium">View all portfolio companies →</a>
+      <a href="/portfolio" class="text-black-600 hover:text-black-800 font-medium">View all portfolio companies →</a>
     </div>
   </div>
 </div>
