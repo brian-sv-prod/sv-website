@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://https://brian-sv-prod.github.io/sv-website/sitemap.xml
