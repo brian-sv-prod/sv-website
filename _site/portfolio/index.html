@@ -3,12 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | VC Fund - Investing in Innovation</title>
+  <title>Portfolio | Service Ventures</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="/assets/favicon/favicon[1].ico">
+
+  
   <link rel="stylesheet" href="/assets/css/main.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
+        fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Helvetica'],
+      },
         extend: {
           colors: {
             black: {
@@ -79,10 +90,35 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
-  <header class="bg-white shadow-sm">
+    
+  <!-- Stylish Announcement Banner -->
+  <div id="announcement-banner" class="bg-gradient-to-r from-gray-500 to-gray-300 text-white py-3 px-4">
+    <div class="container mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-between">
+      <div class="flex items-center mb-2 sm:mb-0">
+        <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+        </svg>
+        <p class="text-sm md:text-base">
+          Just accounced: <span class="font-medium">Service Ventures to host first annual Veteran Entrepreneur Conference!</span>
+        </p>
+      </div>
+      <div class="flex items-center">
+        <a href="/contact-veteran" class="bg-white text-black-800 hover:bg-gray-100 text-sm font-medium py-1 px-4 rounded-md mr-3 transition duration-300">
+          Apply Today
+        </a>
+        <button id="close-banner" class="text-white hover:text-gray-200 focus:outline-none">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+    
+  <header class="bg-black-900">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
-        <a href="/sv-website/" class="font-bold text-2xl text-black-800">Service Ventures</a>
+        <a href="/sv-website/" class="font-bold text-2xl text-white">Service Ventures</a>
 
   <!-- code to add in an SVG logo instead of a text title.  
   <body class="min-h-screen flex flex-col">
@@ -95,10 +131,10 @@
   -->
         
         <nav class="hidden md:flex space-x-8">
-          <a href="/sv-website/" class="text-gray-700 hover:text-black-800 transition duration-300">Home</a>
-          <a href="/sv-website/portfolio/" class="text-gray-700 hover:text-black-800 transition duration-300">Portfolio</a>
+          <a href="/sv-website/" class="text-white hover:text-white transition duration-300">Home</a>
+          <a href="/sv-website/portfolio/" class="text-white hover:text-white transition duration-300">Portfolio</a>
           <!--<a href="/sv-website/blog/" class="text-gray-700 hover:text-black-800 transition duration-300">Blog</a> -->
-          <a href="/sv-website/contact/" class="text-gray-700 hover:text-black-800 transition duration-300">Contact</a>
+          <a href="/sv-website/contact/" class="text-white hover:text-white transition duration-300">Contact</a>
         </nav>
         
         <div class="md:hidden">
@@ -123,9 +159,9 @@
   
   <main class="flex-grow">
     <section class="py-16 md:py-24 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Our Portfolio</h1>
+<div class="container mx-auto px-4 mb-10">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-4xl font-bold text-gray-900 text-center mb-10">Service Ventures Portfolio</h1>
       
       <!--
       <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
@@ -155,137 +191,156 @@
       </div>
       -->
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="ai">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/datasense.svg" alt="DataSense AI" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">DataSense AI</h3>
-          <p class="text-gray-600 mb-4">Enterprise AI platform for automated data analysis and insights generation.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+      
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="ai">
+        <div class="h-16 flex items-center justify-center mb-2">
           
-          <a href="https://example.com/datasense" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+          <a href="https://www.conferlending.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/confer-official.png" alt="Confer AI" class="max-h-full">
+          </a>
           
         </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="fintech">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/finflow.svg" alt="FinFlow" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">FinFlow</h3>
-          <p class="text-gray-600 mb-4">API-first banking platform for modern fintech applications.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/finflow" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+        <!-- <h3 class="text-xl font-semibold mb-2">Confer AI</h3> -->
+        <p class="text-gray-600 mt-10">Consumer lending at the touch of a button.</p>
+        <div class="flex flex-wrap gap-2">
           
         </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="health">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/medtech.svg" alt="MedTech Solutions" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">MedTech Solutions</h3>
-          <p class="text-gray-600 mb-4">AI-powered diagnostic tools for radiology departments.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/medtech" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="saas">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/cloudscale.svg" alt="CloudScale" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">CloudScale</h3>
-          <p class="text-gray-600 mb-4">Infrastructure automation platform for multi-cloud deployments.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/cloudscale" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="saas">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/secureid.svg" alt="SecureID" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">SecureID</h3>
-          <p class="text-gray-600 mb-4">Zero-trust identity management solution for enterprises.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/secureid" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="ai">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/retailai.svg" alt="RetailAI" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">RetailAI</h3>
-          <p class="text-gray-600 mb-4">Predictive analytics platform for retail inventory management.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/retailai" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="fintech">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/paymenthub.svg" alt="PaymentHub" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">PaymentHub</h3>
-          <p class="text-gray-600 mb-4">Global payment processing solution with built-in fraud detection.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/paymenthub" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="health">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/telehealth.svg" alt="TeleHealth Connect" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">TeleHealth Connect</h3>
-          <p class="text-gray-600 mb-4">Virtual healthcare delivery platform with integrated EHR.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/telehealth" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
-        <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-md" data-category="saas">
-          <div class="h-16 flex items-center justify-center mb-4">
-            <img src="/assets/images/portfolio/codeflow.svg" alt="CodeFlow" class="max-h-full">
-          </div>
-          <h3 class="text-xl font-semibold mb-2">CodeFlow</h3>
-          <p class="text-gray-600 mb-4">Developer tools platform for automated code review and testing.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            
-          </div>
-          
-          <a href="https://example.com/codeflow" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-          
-        </div>
-        
+        <!--
+        <a href="https://www.conferlending.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
       </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="fintech">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://https://nudge.larky.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/larky-official.png" alt="Larky" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">Larky</h3> -->
+        <p class="text-gray-600 mt-10">Meet your account holders where they are and accomplish more, faster.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://https://nudge.larky.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="fintech">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://modernfi.com/cuso" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/modernfi-cuso-official.jpg" alt="ModernFi CUSO" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">ModernFi CUSO</h3> -->
+        <p class="text-gray-600 mt-10">Through ModernFi CUSO, credit unions of all sizes and designations can provide accounts with millions in extended NCUA insurance to attract and retain large-value members.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://modernfi.com/cuso" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="fintech">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://nickels.us/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/nickels-official.svg" alt="Nickels" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">Nickels</h3> -->
+        <p class="text-gray-600 mt-10">Nickels provides tools that help you assess your members’ finances and provide solutions where relevant.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://nickels.us/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="ai">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://www.posh.ai/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/posh-official.svg" alt="Posh AI" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">Posh AI</h3> -->
+        <p class="text-gray-600 mt-10">Next-gen AI designed to elevate customer service interactions. Our unified AI platform is built responsibly for financial institutions by AI and Financial experts.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://www.posh.ai/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="ai">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://www.scribeup.io/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/scribeup-official.png" alt="ScribeUp" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">ScribeUp</h3> -->
+        <p class="text-gray-600 mt-10">ScribeUp partners with financial institutions and fintechs to drive banking primacy through customer-focused recurring bill management.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://www.scribeup.io/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="fintech">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://www.silvurinsurance.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/silvur-official.png" alt="Silvur" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">Silvur</h3> -->
+        <p class="text-gray-600 mt-10">Medicare Made Personal.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://www.silvurinsurance.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
+      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="investing">
+        <div class="h-16 flex items-center justify-center mb-2">
+          
+          <a href="https://wealthcabinet.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
+            <img src="/assets/images/portfolio/wealthcabinet-official.png" alt="WealthCabinet" class="max-h-full">
+          </a>
+          
+        </div>
+        <!-- <h3 class="text-xl font-semibold mb-2">WealthCabinet</h3> -->
+        <p class="text-gray-600 mt-10">Modern WealthTech Solution and Infrastructure built for Credit Unions.</p>
+        <div class="flex flex-wrap gap-2">
+          
+        </div>
+        <!--
+        <a href="https://wealthcabinet.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
+         -->
+      </div>
+      
     </div>
   </div>
+</div>
 </section>
 
 <section class="py-16 bg-white">
@@ -301,25 +356,25 @@
           <h3 class="text-xl font-semibold mb-3">What We Look For</h3>
           <ul class="space-y-2 text-gray-600">
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Strong founding team with domain expertise
             </li>
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Disruptive technology or business model
             </li>
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Large addressable market opportunity
             </li>
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Early traction or proof of concept
@@ -331,25 +386,25 @@
           <h3 class="text-xl font-semibold mb-3">Investment Focus</h3>
           <ul class="space-y-2 text-gray-600">
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Seed and Series A rounds
             </li>
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Initial investments between $1-5 million
             </li>
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Technology sectors: SaaS, Fintech, AI/ML, Health Tech
             </li>
             <li class="flex items-start">
-              <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="h-5 w-5 text-black-900 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               North America, Europe, and select global markets
@@ -359,7 +414,7 @@
       </div>
       
       <div class="mt-12">
-        <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+        <a href="/sv-website/contact" class="bg-black-700 hover:bg-black-900 text-white font-medium py-3 px-6 rounded-md transition duration-300">
           Pitch Your Startup
         </a>
       </div>
@@ -396,7 +451,7 @@
 
   </main>
   
-  <footer class="bg-black-800 text-white py-12">
+  <footer class="bg-black-900 text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
