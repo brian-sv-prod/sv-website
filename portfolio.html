@@ -8,7 +8,7 @@ show_announcement: true
 <section class="py-16 md:py-24 bg-gray-50">
 <div class="container mx-auto px-4 mb-10">
   <div class="max-w-5xl mx-auto">
-    <h1 class="text-4xl font-bold text-gray-900 text-center mb-10">Service Ventures Portfolio</h1>
+    <h1 class="text-4xl font-bold text-gray-900 text-center mb-16">Service Ventures Portfolio</h1>
       
       <!--
       <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
@@ -38,36 +38,36 @@ show_announcement: true
       </div>
       -->
       
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-      {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
-      {% for company in sorted_companies %}
-      <div class="portfolio-item bg-white p-6 rounded-lg shadow-sm transition duration-300 hover:shadow-lg" data-category="{{ company.category }}">
-        <div class="h-16 flex items-center justify-center mb-2">
-          {% if company.website %}
-          <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full hover:opacity-80 transition duration-300">
-            <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
-          </a>
-          {% else %}
-          <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
-          {% endif %}
-        </div>
-        <!-- <h3 class="text-xl font-semibold mb-2">{{ company.name }}</h3> -->
-        <p class="text-gray-600 mt-10">{{ company.description }}</p>
-        <div class="flex flex-wrap gap-2">
-          {% for tag in company.tags %}
-          <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        <!--{% if company.website %}
-        <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">Visit website →</a>
-        {% endif %} -->
-      </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-5" id="portfolio-grid">
+  {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
+  {% for company in sorted_companies %}
+  <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl hover:bg-gray-50 flex flex-col" data-category="{{ company.category }}">
+    {% if company.website %}
+    <!-- Clickable overlay for the entire card -->
+    <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10 rounded-lg overflow-hidden">
+      <span class="sr-only">Visit {{ company.name }} website</span>
+    </a>
+    {% endif %}
+    
+    <div class="h-16 flex items-center justify-center mb-1 relative z-0">
+      <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
+    </div>
+    
+    <div class="overflow-y-auto flex-grow relative z-0 mt-8 custom-scrollbar">
+      <p class="text-gray-600">{{ company.description }}</p>
+    </div>
+    
+    <div class="flex flex-wrap gap-2 relative z-0 mt-4">
+      {% for tag in company.tags %}
+      <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
       {% endfor %}
     </div>
   </div>
+  {% endfor %}
 </div>
 </section>
 
+<!-- hide investment criteria
 <section class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-3xl mx-auto text-center">
@@ -146,6 +146,7 @@ show_announcement: true
     </div>
   </div>
 </section>
+-->
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
