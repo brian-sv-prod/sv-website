@@ -22,12 +22,12 @@
   featured: true
   tags:
 
-#- name: Posh AI
-#  description: Next-gen AI designed to elevate customer service interactions. Our unified AI platform is built responsibly for financial institutions by AI and Financial experts.
-#  category: ai
-#  logo: /assets/images/portfolio/posh-official.svg
-#  website: https://www.posh.ai/
-#  tags:
+- name: Posh AI
+  description: Next-gen AI designed to elevate customer service interactions. Our unified AI platform is built responsibly for financial institutions by AI and Financial experts
+  category: ai
+  logo: /assets/images/portfolio/posh-official.svg
+  website: https://www.posh.ai/
+  tags:
 
 #- name: Confer AI
 #  description: Consumer lending at the touch of a button.
