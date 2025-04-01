@@ -22,38 +22,38 @@
   featured: true
   tags:
 
-- name: Posh AI
-  description: Next-gen AI designed to elevate customer service interactions. Our unified AI platform is built responsibly for financial institutions by AI and Financial experts.
-  category: ai
-  logo: /assets/images/portfolio/posh-official.svg
-  website: https://www.posh.ai/
-  tags:
+#- name: Posh AI
+#  description: Next-gen AI designed to elevate customer service interactions. Our unified AI platform is built responsibly for financial institutions by AI and Financial experts.
+#  category: ai
+#  logo: /assets/images/portfolio/posh-official.svg
+#  website: https://www.posh.ai/
+#  tags:
 
-- name: Confer AI
-  description: Consumer lending at the touch of a button.
-  category: ai
-  logo: /assets/images/portfolio/confer-official.png
-  website: https://www.conferlending.com/
-  tags:
+#- name: Confer AI
+#  description: Consumer lending at the touch of a button.
+#  category: ai
+#  logo: /assets/images/portfolio/confer-official.png
+#  website: https://www.conferlending.com/
+#  tags:
 
-- name: ScribeUp
-  description: ScribeUp partners with financial institutions and fintechs to drive banking primacy through customer-focused recurring bill management.
-  category: ai
-  logo: /assets/images/portfolio/scribeup-official.png
-  website: https://www.scribeup.io/
-  tags:
+#- name: ScribeUp
+#  description: ScribeUp partners with financial institutions and fintechs to drive banking primacy through customer-focused recurring bill management.
+#  category: ai
+#  logo: /assets/images/portfolio/scribeup-official.png
+#  website: https://www.scribeup.io/
+#  tags:
 
-- name: Nickels
-  description: Nickels provides tools that help you assess your members’ finances and provide solutions where relevant.
-  category: fintech
-  logo: /assets/images/portfolio/nickels-official.svg
-  website: https://nickels.us/
-  tags:
+#- name: Nickels
+#  description: Nickels provides tools that help you assess your members’ finances and provide solutions where relevant.
+#  category: fintech
+#  logo: /assets/images/portfolio/nickels-official.svg
+#  website: https://nickels.us/
+#  tags:
 
-- name: Silvur
-  description: Medicare Made Personal.
-  category: fintech
-  logo: /assets/images/portfolio/silvur-official.png
-  website: https://www.silvurinsurance.com/
-  tags:
+#- name: Silvur
+#  description: Medicare Made Personal.
+#  category: fintech
+#  logo: /assets/images/portfolio/silvur-official.png
+#  website: https://www.silvurinsurance.com/
+#  tags:
 
