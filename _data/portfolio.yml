@@ -29,12 +29,19 @@
   website: https://www.posh.ai/
   tags:
 
-#- name: Confer AI
-#  description: Consumer lending at the touch of a button.
-#  category: ai
-#  logo: /assets/images/portfolio/confer-official.png
-#  website: https://www.conferlending.com/
-#  tags:
+- name: Service Ventures
+  description: Testing the Service Ventures 2nd logo.
+  category: Venture Firm
+  logo: /assets/images/portfolio/logo-2-full.png
+  website: 
+  tags:
+
+- name: Service Ventures
+  description: Testing the Service Ventures 3rd logo.
+  category: Venture Firm
+  logo: /assets/images/portfolio/logo-3-full.png
+  website: 
+  tags:
 
 #- name: ScribeUp
 #  description: ScribeUp partners with financial institutions and fintechs to drive banking primacy through customer-focused recurring bill management.
