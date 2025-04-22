@@ -33,6 +33,18 @@
         extend: {
           colors: {
             black: {
+            50: '#ffffff',
+            100: '#ffffff',
+            200: '#ffffff',
+            300: '#ffffff',
+            400: '#ffffff',
+            500: '#77a7f7',
+            600: '#333790',
+            700: '#080B35',
+            800: '#180326',
+            900: '#000000',
+          },
+          black_basic: {
             50: '#f7f7f7',
             100: '#e3e3e3',
             200: '#c8c8c8',
@@ -44,7 +56,7 @@
             800: '#383838',
             900: '#121212',
           },
-            blus: {
+            blue: {
               50: '#f0f9ff',
               100: '#e0f2fe',
               200: '#bae6fd',
@@ -102,7 +114,7 @@
 <body class="min-h-screen flex flex-col">
     
   <!-- Stylish Announcement Banner -->
-  <div id="announcement-banner" class="bg-gradient-to-r from-gray-500 to-gray-300 text-white py-3 px-4">
+  <div id="announcement-banner" class="bg-gradient-to-r from-black-500 to-black-500 text-white py-3 px-4">
     <div class="container mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-between">
       <div class="flex items-center mb-2 sm:mb-0">
         <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -127,19 +139,19 @@
     </div>
   </div>
     
-  <header class="bg-black-900">
+  <header class="bg-black-700">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
-      <a href="/sv-website/" class="flex items-center">
+      <a href="/" class="flex items-center">
           <img src="/assets/images/portfolio/logo-3-full.svg" alt="Service Ventures" class="h-10">
         </a>
       
         
         <nav class="hidden md:flex space-x-8">
-          <a href="/sv-website/" class="text-white hover:text-white transition duration-300">Home</a>
-          <a href="/sv-website/portfolio/" class="text-white hover:text-white transition duration-300">Portfolio</a>
-          <!--<a href="/sv-website/blog/" class="text-gray-700 hover:text-black-800 transition duration-300">Blog</a> -->
-          <a href="/sv-website/contact/" class="text-white hover:text-white transition duration-300">Contact</a>
+          <a href="/" class="text-white hover:text-white transition duration-300">Home</a>
+          <a href="/portfolio/" class="text-white hover:text-white transition duration-300">Portfolio</a>
+          <!--<a href="/blog/" class="text-gray-700 hover:text-black-800 transition duration-300">Blog</a> -->
+          <a href="/contact/" class="text-white hover:text-white transition duration-300">Contact</a>
         </nav>
         
         <div class="md:hidden">
@@ -166,9 +178,9 @@
     <section class="hero bg-gray-200 py-12 md:py-48">
   <div class="container mx-auto px-5">
     <div class="max-w-3xl">
-      <h1 class="text-5xl font-bold text-gray-900 mb-6">Leaders in Credit Union Venture Capital</h1>
-      <p class="text-xl text-gray-600 mb-8">We partner with exceptional founders building the next generation of technology companies.</p>
-      <a href="/sv-website/portfolio" class="bg-black-900 hover:bg-black-900 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+      <h1 class="text-5xl font-bold text-black-700 mb-6">Leaders in Credit Union Venture Capital</h1>
+      <p class="text-xl text-black-700 mb-8">We partner with exceptional founders building the next generation of technology companies.</p>
+      <a href="/sv-website/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">
         View Our Portfolio
       </a>
     </div>
@@ -178,7 +190,7 @@
 <section class="py-16 bg-gray-50">
 <div class="container mx-auto px-4 md:py-24 ">
   <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Recent Investments</h2>
+    <h2 class="text-3xl font-bold text-black-700 mb-8">Recent Investments</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       
@@ -194,7 +206,7 @@
           <img src="/assets/images/portfolio/larky-official.png" alt="Larky" class="max-h-full">
         </div>
         
-        <p class="text-gray-600 mt-8 mb-auto relative z-0 line-clamp-5">Meet your account holders where they are and accomplish more, faster.</p>
+        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Meet your account holders where they are and accomplish more, faster.</p>
         
         <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
           
@@ -213,7 +225,7 @@
           <img src="/assets/images/portfolio/modernfi-cuso-official.jpg" alt="ModernFi CUSO" class="max-h-full">
         </div>
         
-        <p class="text-gray-600 mt-8 mb-auto relative z-0 line-clamp-5">Through ModernFi CUSO, credit unions of all sizes and designations can provide accounts with millions in extended NCUA insurance to attract and retain large-value members.</p>
+        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Through ModernFi CUSO, credit unions of all sizes and designations can provide accounts with millions in extended NCUA insurance to attract and retain large-value members.</p>
         
         <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
           
@@ -232,7 +244,7 @@
           <img src="/assets/images/portfolio/wealthcabinet-official.png" alt="WealthCabinet" class="max-h-full">
         </div>
         
-        <p class="text-gray-600 mt-8 mb-auto relative z-0 line-clamp-5">Modern WealthTech Solution and Infrastructure built for Credit Unions.</p>
+        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Modern WealthTech Solution and Infrastructure built for Credit Unions.</p>
         
         <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
           
@@ -241,7 +253,7 @@
       
     </div>
     <div class="mt-12">
-        <a href="/sv-website/portfolio" class="bg-black-900 hover:bg-black-900 text-white font-medium py-3 px-6 rounded-md transition duration-300">See More</a>
+        <a href="/sv-website/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">See More</a>
       </div>
   </div>
 </div>
@@ -327,7 +339,7 @@
     <div class="max-w-5xl mx-auto py-20">
         <div class="lg:col-span-2">
           <div class="bg-white rounded-lg shadow-sm p-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 ml-10">Subscribe for updates from Service Ventures</h2>
+            <h2 class="text-2xl font-bold text-black-700 mb-6 ml-10">Subscribe for updates from Service Ventures</h2>
             
            <!-- HubSpot Form - Replace with your HubSpot form embed code -->
            <script src="https://js.hsforms.net/forms/embed/47303364.js" defer></script>
@@ -349,7 +361,7 @@
 
   </main>
   
-  <footer class="bg-black-900 text-white py-12">
+  <footer class="bg-black-700 text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
