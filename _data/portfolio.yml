@@ -17,7 +17,7 @@
 - name: WealthCabinet
   description: Modern WealthTech Solution and Infrastructure built for Credit Unions.
   category: investing
-  logo: /assets/images/portfolio/wealthcabinet-official.png
+  logo: /assets/images/portfolio/wealthcabinet-official.svg
   website: https://wealthcabinet.com/
   featured: true
   tags:
