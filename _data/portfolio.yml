@@ -17,7 +17,7 @@
 - name: WealthCabinet
   description: Modern WealthTech Solution and Infrastructure built for Credit Unions.
   category: investing
-  logo: /assets/images/portfolio/wealthcabinet-official.svg
+  logo: /assets/images/portfolio/wealthcabinet-official.png
   website: https://wealthcabinet.com/
   featured: true
   tags:
@@ -27,6 +27,7 @@
   category: ai
   logo: /assets/images/portfolio/posh-official.svg
   website: https://www.posh.ai/
+  featured: true
   tags:
 
 #- name: ScribeUp
@@ -34,6 +35,7 @@
 #  category: ai
 #  logo: /assets/images/portfolio/scribeup-official.png
 #  website: https://www.scribeup.io/
+#  featured: false
 #  tags:
 
 #- name: Nickels
@@ -41,6 +43,7 @@
 #  category: fintech
 #  logo: /assets/images/portfolio/nickels-official.svg
 #  website: https://nickels.us/
+#  featured: false
 #  tags:
 
 #- name: Silvur
@@ -48,5 +51,6 @@
 #  category: fintech
 #  logo: /assets/images/portfolio/silvur-official.png
 #  website: https://www.silvurinsurance.com/
+#  featured: false
 #  tags:
 

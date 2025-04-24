@@ -6,50 +6,83 @@ show_announcement: true
 
 <section class="hero bg-gray-200 py-12 md:py-48">
   <div class="container mx-auto px-5">
-    <div class="max-w-3xl">
-      <h1 class="text-5xl font-bold text-black-700 mb-6">Investing in the Future of Cooperative Finance</h1>
-      <p class="text-xl text-black-700 mb-8">We partner with changemakers creating groundbreaking technologies that amplify the credit union mission and reshape the financial landscape. Our goal is to find solutions that help credit unions stay ahead of disruption by connecting them with innovative solutions that drive growth, deepen member impact, and future-proof their organizations.</p>
-      <a href="/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">
-        View Our Portfolio
-      </a>
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="md:w-2/5 md:pr-8 mb-8 md:mb-0">
+        <h1 class="text-5xl font-bold text-black-700 mb-6">Investing in the Future of Cooperative Finance</h1>
+        <p class="text-xl text-black-700 mb-8">We partner with changemakers creating groundbreaking technologies that amplify the credit union mission and reshape the financial landscape. Our goal is to find solutions that help credit unions stay ahead of disruption by connecting them with innovative solutions that drive growth, deepen member impact, and future-proof their organizations.</p>
+        <a href="/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+          View Our Portfolio
+        </a>
+      </div>
+      <div class="md:w-3/5 flex justify-center md:justify-end">
+        <div class="relative w-full max-w-2xl h-80 md:h-[500px] rounded-lg overflow-hidden bg-gray-200">
+          <img 
+            src="{{ site.baseurl }}/assets/images/hero-image.jpg" 
+            alt="Cooperative Finance Innovation" 
+            class="w-full h-full object-contain" 
+            onerror="this.src='{{ site.baseurl }}/assets/images/crop-diamond.svg'; this.onerror=null;">
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4 md:py-24 ">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-black-700 mb-8">Recent Investments</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {% assign featured_companies = site.data.portfolio | where: "featured", true | sort: 'name' | limit: 3 %}
-      {% for company in featured_companies %}
-      <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl h-full flex flex-col">
-        {% if company.website %}
-        <!-- Clickable overlay for the entire card -->
-        <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10 rounded-lg overflow-hidden">
-          <span class="sr-only">Visit {{ company.name }} website</span>
-        </a>
-        {% endif %}
+  <div class="container mx-auto px-4 md:py-24">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-black-700 mb-6">Recent Investments</h2>
+      
+      <div class="carousel-container">
+        <button class="carousel-button carousel-button-prev" aria-label="Previous slide" type="button">&lsaquo;</button>
         
-        <div class="h-16 flex items-center justify-center mb-0 relative z-0">
-          <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
+        <div class="carousel-track">
+          {% assign featured_companies = site.data.portfolio | where: "featured", true | sort: 'name' %}
+          {% for company in featured_companies %}
+          <div class="carousel-slide">
+            <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
+              {% if company.website %}
+              <!-- Use a dedicated link element instead of an overlay -->
+              <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span class="sr-only">Visit {{ company.name }} website</span>
+              </a>
+              {% endif %}
+              
+              <div class="h-16 flex items-center justify-center mb-0 relative z-0">
+                <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
+              </div>
+              
+              <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">{{ company.description }}</p>
+            </div>
+          </div>
+          {% endfor %}
         </div>
         
-        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">{{ company.description }}</p>
-        
-        <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
-          {% for tag in company.tags %}
-          <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">{{ tag }}</span>
-          {% endfor %}
-        </div>-->
+        <button class="carousel-button carousel-button-next" aria-label="Next slide" type="button">&rsaquo;</button>
       </div>
-      {% endfor %}
-    </div>
-    <div class="mt-12">
+
+      
+      <!--
+      <div class="carousel-indicators">
+        {% assign indicator_count = featured_companies.size | divided_by: 3 %}
+        {% assign remainder = featured_companies.size | modulo: 3 %}
+        {% if remainder != 0 %}
+          {% assign indicator_count = indicator_count | plus: 1 %}
+        {% endif %}
+        
+        {% for i in (1..indicator_count) %}
+          <div class="carousel-indicator {% if forloop.first %}active{% endif %}"></div>
+        {% endfor %}
+      </div>
+      -->
+      
+      <!--
+      <div class="mt-12">
         <a href="/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">See More</a>
       </div>
+      -->
+
+    </div>
   </div>
-</div>
 </section>
 
 <!--
@@ -128,15 +161,7 @@ show_announcement: true
           <div class="bg-white rounded-lg shadow-sm p-8">
             <h2 class="text-2xl font-bold text-black-700 mb-6 ml-10">Subscribe for updates from Service Ventures</h2>
         
-           <!-- HubSpot Form - Replace with your HubSpot form embed code
-           <script src="https://js.hsforms.net/forms/embed/47303364.js" defer></script>
-           <div class="hs-form-frame" data-region="na1" data-form-id="cb71166c-a4c8-482c-898f-334672f30303" data-portal-id="47303364"></div>
-              </form>
-              
-            </div>
-            <!-- End HubSpot Form - ->
+           <!-- HubSpot Form -->
           </div>
       </div>
   </section>
--->
-

@@ -38,7 +38,7 @@ show_announcement: true
       </div>
       -->
       
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-5" id="portfolio-grid">
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 auto-rows-5" id="portfolio-grid">
   {% assign sorted_companies = site.data.portfolio | sort: 'name' %}
   {% for company in sorted_companies %}
   <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl hover:bg-gray-50 flex flex-col" data-category="{{ company.category }}">
@@ -49,7 +49,7 @@ show_announcement: true
     </a>
     {% endif %}
     
-    <div class="h-16 flex items-center justify-center mb-1 relative z-0">
+    <div class="h-24 flex items-center justify-center mb-1 relative z-0">
       <img src="{{ site.baseurl }}{{ company.logo | default: '/assets/images/placeholder-logo.svg' }}" alt="{{ company.name }}" class="max-h-full">
     </div>
     

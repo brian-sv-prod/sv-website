@@ -108,6 +108,129 @@
       .prose pre {
         @apply bg-gray-100 rounded p-4 overflow-x-auto mb-6;
       }
+      
+      /* Carousel Styles */
+      .carousel-container {
+        position: relative;
+        overflow-x: hidden; /* Hide horizontal overflow */
+        overflow-y: visible; /* Allow vertical overflow */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 40px 20px;
+        z-index: 1; /* Set a base z-index */
+      }
+      
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .carousel-slide {
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 0 10px 20px;
+        box-sizing: border-box;
+        position: relative;
+      }
+      
+      @media (min-width: 768px) {
+        .carousel-slide {
+          flex: 0 0 50%;
+          width: 50%;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .carousel-slide {
+          flex: 0 0 33.333%;
+          width: 33.333%;
+        }
+      }
+      
+      .carousel-button {
+        position: absolute;
+        top: 150px; /* Fixed position to align with middle of cards */
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        z-index: 20; /* Increase z-index to ensure buttons are above all other elements */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        pointer-events: auto; /* Ensure pointer events are enabled */
+      }
+      
+      .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      
+      .carousel-button-prev {
+        left: 0;
+      }
+      
+      .carousel-button-next {
+        right: 0;
+      }
+      
+      /* Responsive positioning for buttons */
+      @media (max-width: 768px) {
+        .carousel-button {
+          top: 120px; /* Adjust for smaller cards on mobile */
+        }
+      }
+      
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        z-index: 5;
+        position: relative;
+      }
+      
+      .carousel-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .carousel-indicator.active {
+        background-color: #333;
+      }
+      
+      /* Portfolio item styles */
+      .portfolio-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      
+      /* Ensure all slides have proper height */
+      .carousel-slide .portfolio-item {
+        height: auto;
+        min-height: 300px;
+        padding-bottom: 10px;
+      }
+
+      /* Fix for clickable items */
+      .portfolio-item a.card-link {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        cursor: pointer;
+      }
     }
   </style>
 </head>
@@ -180,86 +303,134 @@
   <main class="flex-grow">
     <section class="hero bg-gray-200 py-12 md:py-48">
   <div class="container mx-auto px-5">
-    <div class="max-w-3xl">
-      <h1 class="text-5xl font-bold text-black-700 mb-6">Investing in the Future of Cooperative Finance</h1>
-      <p class="text-xl text-black-700 mb-8">We partner with changemakers creating groundbreaking technologies that amplify the credit union mission and reshape the financial landscape. Our goal is to find solutions that help credit unions stay ahead of disruption by connecting them with innovative solutions that drive growth, deepen member impact, and future-proof their organizations.</p>
-      <a href="/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">
-        View Our Portfolio
-      </a>
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="md:w-2/5 md:pr-8 mb-8 md:mb-0">
+        <h1 class="text-5xl font-bold text-black-700 mb-6">Investing in the Future of Cooperative Finance</h1>
+        <p class="text-xl text-black-700 mb-8">We partner with changemakers creating groundbreaking technologies that amplify the credit union mission and reshape the financial landscape. Our goal is to find solutions that help credit unions stay ahead of disruption by connecting them with innovative solutions that drive growth, deepen member impact, and future-proof their organizations.</p>
+        <a href="/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+          View Our Portfolio
+        </a>
+      </div>
+      <div class="md:w-3/5 flex justify-center md:justify-end">
+        <div class="relative w-full max-w-2xl h-80 md:h-[500px] rounded-lg overflow-hidden bg-gray-200">
+          <img 
+            src="/assets/images/hero-image.jpg" 
+            alt="Cooperative Finance Innovation" 
+            class="w-full h-full object-contain" 
+            onerror="this.src='/assets/images/crop-diamond.svg'; this.onerror=null;">
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4 md:py-24 ">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-black-700 mb-8">Recent Investments</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="container mx-auto px-4 md:py-24">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-black-700 mb-6">Recent Investments</h2>
       
-      
-      <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl h-full flex flex-col">
+      <div class="carousel-container">
+        <button class="carousel-button carousel-button-prev" aria-label="Previous slide" type="button">&lsaquo;</button>
         
-        <!-- Clickable overlay for the entire card -->
-        <a href="https://nudge.larky.com/" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10 rounded-lg overflow-hidden">
-          <span class="sr-only">Visit Larky website</span>
-        </a>
-        
-        
-        <div class="h-16 flex items-center justify-center mb-0 relative z-0">
-          <img src="/assets/images/portfolio/larky-official.png" alt="Larky" class="max-h-full">
+        <div class="carousel-track">
+          
+          
+          <div class="carousel-slide">
+            <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
+              
+              <!-- Use a dedicated link element instead of an overlay -->
+              <a href="https://nudge.larky.com/" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span class="sr-only">Visit Larky website</span>
+              </a>
+              
+              
+              <div class="h-16 flex items-center justify-center mb-0 relative z-0">
+                <img src="/assets/images/portfolio/larky-official.png" alt="Larky" class="max-h-full">
+              </div>
+              
+              <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Meet your account holders where they are and accomplish more, faster.</p>
+            </div>
+          </div>
+          
+          <div class="carousel-slide">
+            <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
+              
+              <!-- Use a dedicated link element instead of an overlay -->
+              <a href="https://modernfi.com/cuso" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span class="sr-only">Visit ModernFi CUSO website</span>
+              </a>
+              
+              
+              <div class="h-16 flex items-center justify-center mb-0 relative z-0">
+                <img src="/assets/images/portfolio/modernfi-cuso-official.jpg" alt="ModernFi CUSO" class="max-h-full">
+              </div>
+              
+              <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Through ModernFi CUSO, credit unions of all sizes and designations can provide accounts with millions in extended NCUA insurance to attract and retain large-value members.</p>
+            </div>
+          </div>
+          
+          <div class="carousel-slide">
+            <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
+              
+              <!-- Use a dedicated link element instead of an overlay -->
+              <a href="https://www.posh.ai/" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span class="sr-only">Visit Posh AI website</span>
+              </a>
+              
+              
+              <div class="h-16 flex items-center justify-center mb-0 relative z-0">
+                <img src="/assets/images/portfolio/posh-official.svg" alt="Posh AI" class="max-h-full">
+              </div>
+              
+              <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Next-gen AI designed to elevate customer service interactions. Our unified AI platform is built responsibly for financial institutions by AI and Financial experts</p>
+            </div>
+          </div>
+          
+          <div class="carousel-slide">
+            <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
+              
+              <!-- Use a dedicated link element instead of an overlay -->
+              <a href="https://wealthcabinet.com/" target="_blank" rel="noopener noreferrer" class="card-link">
+                <span class="sr-only">Visit WealthCabinet website</span>
+              </a>
+              
+              
+              <div class="h-16 flex items-center justify-center mb-0 relative z-0">
+                <img src="/assets/images/portfolio/wealthcabinet-official.png" alt="WealthCabinet" class="max-h-full">
+              </div>
+              
+              <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Modern WealthTech Solution and Infrastructure built for Credit Unions.</p>
+            </div>
+          </div>
+          
         </div>
         
-        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Meet your account holders where they are and accomplish more, faster.</p>
-        
-        <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
-          
-        </div>-->
+        <button class="carousel-button carousel-button-next" aria-label="Next slide" type="button">&rsaquo;</button>
       </div>
+
       
-      <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl h-full flex flex-col">
-        
-        <!-- Clickable overlay for the entire card -->
-        <a href="https://modernfi.com/cuso" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10 rounded-lg overflow-hidden">
-          <span class="sr-only">Visit ModernFi CUSO website</span>
-        </a>
+      <!--
+      <div class="carousel-indicators">
         
         
-        <div class="h-16 flex items-center justify-center mb-0 relative z-0">
-          <img src="/assets/images/portfolio/modernfi-cuso-official.jpg" alt="ModernFi CUSO" class="max-h-full">
-        </div>
         
-        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Through ModernFi CUSO, credit unions of all sizes and designations can provide accounts with millions in extended NCUA insurance to attract and retain large-value members.</p>
         
-        <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
-          
-        </div>-->
+        
+          <div class="carousel-indicator active"></div>
+        
+          <div class="carousel-indicator "></div>
+        
       </div>
+      -->
       
-      <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl h-full flex flex-col">
-        
-        <!-- Clickable overlay for the entire card -->
-        <a href="https://wealthcabinet.com/" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10 rounded-lg overflow-hidden">
-          <span class="sr-only">Visit WealthCabinet website</span>
-        </a>
-        
-        
-        <div class="h-16 flex items-center justify-center mb-0 relative z-0">
-          <img src="/assets/images/portfolio/wealthcabinet-official.svg" alt="WealthCabinet" class="max-h-full">
-        </div>
-        
-        <p class="text-black-700 mt-8 mb-auto relative z-0 line-clamp-5">Modern WealthTech Solution and Infrastructure built for Credit Unions.</p>
-        
-        <!--<div class="flex flex-wrap gap-2 relative z-0 mt-4">
-          
-        </div>-->
-      </div>
-      
-    </div>
-    <div class="mt-12">
+      <!--
+      <div class="mt-12">
         <a href="/portfolio" class="bg-black-700 hover:bg-black-800 text-white font-medium py-3 px-6 rounded-md transition duration-300">See More</a>
       </div>
+      -->
+
+    </div>
   </div>
-</div>
 </section>
 
 <!--
@@ -345,19 +516,10 @@
           <div class="bg-white rounded-lg shadow-sm p-8">
             <h2 class="text-2xl font-bold text-black-700 mb-6 ml-10">Subscribe for updates from Service Ventures</h2>
         
-           <!-- HubSpot Form - Replace with your HubSpot form embed code
-           <script src="https://js.hsforms.net/forms/embed/47303364.js" defer></script>
-           <div class="hs-form-frame" data-region="na1" data-form-id="cb71166c-a4c8-482c-898f-334672f30303" data-portal-id="47303364"></div>
-              </form>
-              
-            </div>
-            <!-- End HubSpot Form - ->
+           <!-- HubSpot Form -->
           </div>
       </div>
   </section>
--->
-
-
   </main>
   
   <footer class="bg-black-700 text-white py-12">
@@ -451,8 +613,117 @@
           mobileMenu.classList.toggle('hidden');
         });
       }
+      
+      // Initialize carousel
+      initializeCarousel();
+      
+      // Center carousel buttons vertically
+      window.addEventListener('load', centerCarouselButtons);
+      window.addEventListener('resize', centerCarouselButtons);
     });
+    
+    // Function to dynamically center the carousel buttons
+    function centerCarouselButtons() {
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      const prevButton = document.querySelector('.carousel-button-prev');
+      const nextButton = document.querySelector('.carousel-button-next');
+      
+      if (portfolioItems.length > 0 && prevButton && nextButton) {
+        const firstItem = portfolioItems[0];
+        const itemHeight = firstItem.offsetHeight;
+        const centerPosition = (itemHeight / 2);
+        
+        prevButton.style.top = `${centerPosition}px`;
+        nextButton.style.top = `${centerPosition}px`;
+      }
+    }
+    
+// Update the carousel JavaScript to prevent click events from interfering with links:
+
+function initializeCarousel() {
+  const carouselTrack = document.querySelector('.carousel-track');
+  const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+  const nextButton = document.querySelector('.carousel-button-next');
+  const prevButton = document.querySelector('.carousel-button-prev');
+  const indicators = Array.from(document.querySelectorAll('.carousel-indicator'));
+  
+  if (!carouselTrack || slides.length === 0) return;
+  
+  let currentIndex = 0;
+  let slideWidth = slides[0].getBoundingClientRect().width;
+  let slidesPerView = getSlidesPerView();
+  
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  
+  function updateCarousel() {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    slidesPerView = getSlidesPerView();
+    goToSlide(currentIndex);
+  }
+  
+  function goToSlide(index) {
+    if (index < 0) {
+      index = slides.length - slidesPerView;
+    } else if (index > slides.length - slidesPerView) {
+      index = 0;
+    }
+    
+    currentIndex = index;
+    carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    
+    // Update indicators
+    if (indicators.length > 0) {
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === Math.floor(currentIndex / slidesPerView));
+      });
+    }
+  }
+  
+  // Event listeners - Make sure these are properly attached
+  if (nextButton) {
+    // Remove any existing event listeners
+    nextButton.replaceWith(nextButton.cloneNode(true));
+    const newNextButton = document.querySelector('.carousel-button-next');
+    
+    newNextButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      goToSlide(currentIndex - slidesPerView);
+      console.log('Next button clicked (moving backward)'); // Debug log
+    });
+  }
+  
+  if (prevButton) {
+    // Remove any existing event listeners
+    prevButton.replaceWith(prevButton.cloneNode(true));
+    const newPrevButton = document.querySelector('.carousel-button-prev');
+    
+    newPrevButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      goToSlide(currentIndex + slidesPerView);
+      console.log('Previous button clicked (moving forward)'); // Debug log
+    });
+  }
+  
+  if (indicators.length > 0) {
+    indicators.forEach((indicator, i) => {
+      indicator.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goToSlide(i * slidesPerView);
+      });
+    });
+  }
+  
+  window.addEventListener('resize', updateCarousel);
+  
+  // Initialize
+  updateCarousel();
+}
   </script>
 </body>
 </html>
-
