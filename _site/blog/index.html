@@ -242,10 +242,9 @@
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
       <a href="/" class="flex items-center">
-          <img src="/assets/images/icon-text-long.png" alt="Service Ventures" class="h-10">
+          <img src="/assets/images/sv-final.png" alt="Service Ventures" class="h-10">
         </a>
       
-        
         <nav class="hidden md:flex space-x-8">
           <a href="/" class="text-white hover:text-white transition duration-300">Home</a>
           <a href="/portfolio/" class="text-white hover:text-white transition duration-300">Portfolio</a>
@@ -254,7 +253,7 @@
         </nav>
         
         <div class="md:hidden">
-          <button id="mobile-menu-button" class="text-gray-700">
+          <button id="mobile-menu-button" class="text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -264,10 +263,10 @@
       
       <div id="mobile-menu" class="md:hidden hidden py-4 border-t">
         <nav class="flex flex-col space-y-4">
-          <a href="/" class="text-gray-700 hover:text-black-700 transition duration-300">Home</a>
-          <a href="/portfolio/" class="text-gray-700 hover:text-black-700 transition duration-300">Portfolio</a>
+          <a href="/" class="text-white hover:text-white transition duration-300">Home</a>
+          <a href="/portfolio/" class="text-white hover:text-white transition duration-300">Portfolio</a>
           <a href="/about/" class="text-white hover:text-white transition duration-300">About Us</a>
-          <a href="/contact/" class="text-gray-700 hover:text-black-700 transition duration-300">Contact</a>
+          <a href="/contact/" class="text-white hover:text-white transition duration-300">Contact</a>
         </nav>
       </div>
     </div>
@@ -610,21 +609,21 @@ function initializeCarousel() {
     newNextButton.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      goToSlide(currentIndex - slidesPerView);
-      console.log('Next button clicked (moving backward)'); // Debug log
+      goToSlide(currentIndex + slidesPerView);
+      console.log('Next button clicked (moving forward)');
     });
   }
   
   if (prevButton) {
-    // Remove any existing event listeners
+    // Remove any existing event listenersS
     prevButton.replaceWith(prevButton.cloneNode(true));
     const newPrevButton = document.querySelector('.carousel-button-prev');
     
     newPrevButton.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      goToSlide(currentIndex + slidesPerView);
-      console.log('Previous button clicked (moving forward)'); // Debug log
+      goToSlide(currentIndex - slidesPerView);
+      console.log('Previous button clicked (moving backward)'); // Debug log
     });
   }
   
