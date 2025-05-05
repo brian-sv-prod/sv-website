@@ -652,88 +652,96 @@
 // Update the carousel JavaScript to prevent click events from interfering with links:
 
 function initializeCarousel() {
-  const carouselTrack = document.querySelector('.carousel-track');
-  const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-  const nextButton = document.querySelector('.carousel-button-next');
-  const prevButton = document.querySelector('.carousel-button-prev');
-  const indicators = Array.from(document.querySelectorAll('.carousel-indicator'));
-  
-  if (!carouselTrack || slides.length === 0) return;
-  
-  let currentIndex = 0;
-  let slideWidth = slides[0].getBoundingClientRect().width;
-  let slidesPerView = getSlidesPerView();
-  
+  const carouselTrack = document.querySelector(".carousel-track")
+  const slides = Array.from(document.querySelectorAll(".carousel-slide"))
+  const nextButton = document.querySelector(".carousel-button-next")
+  const prevButton = document.querySelector(".carousel-button-prev")
+  const indicators = Array.from(document.querySelectorAll(".carousel-indicator"))
+
+  if (!carouselTrack || slides.length === 0) return
+
+  let currentIndex = 0
+  let slideWidth = slides[0].getBoundingClientRect().width
+  let slidesPerView = getSlidesPerView()
+
   function getSlidesPerView() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
+    if (window.innerWidth >= 1024) return 3
+    if (window.innerWidth >= 768) return 2
+    return 1
   }
-  
+
   function updateCarousel() {
-    slideWidth = slides[0].getBoundingClientRect().width;
-    slidesPerView = getSlidesPerView();
-    goToSlide(currentIndex);
+    slideWidth = slides[0].getBoundingClientRect().width
+    slidesPerView = getSlidesPerView()
+    goToSlide(currentIndex)
   }
-  
+
   function goToSlide(index) {
+    // Ensure index is within bounds
+    const maxIndex = slides.length - slidesPerView
+
     if (index < 0) {
-      index = slides.length - slidesPerView;
-    } else if (index > slides.length - slidesPerView) {
-      index = 0;
+      index = maxIndex
+    } else if (index > maxIndex) {
+      index = 0
     }
-    
-    currentIndex = index;
-    carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    
+
+    currentIndex = index
+    carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`
+
     // Update indicators
     if (indicators.length > 0) {
       indicators.forEach((indicator, i) => {
-        indicator.classList.toggle('active', i === Math.floor(currentIndex / slidesPerView));
-      });
+        indicator.classList.toggle("active", i === Math.floor(currentIndex / slidesPerView))
+      })
     }
+
+    // Update button visibility/state if needed
+    console.log(`Current index: ${currentIndex}, Max index: ${maxIndex}`)
   }
-  
-  // Event listeners - Make sure these are properly attached
+
+  // Event listeners with consistent navigation direction
   if (nextButton) {
     // Remove any existing event listeners
-    nextButton.replaceWith(nextButton.cloneNode(true));
-    const newNextButton = document.querySelector('.carousel-button-next');
-    
-    newNextButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      goToSlide(currentIndex + slidesPerView);
-      console.log('Next button clicked (moving forward)');
-    });
+    nextButton.replaceWith(nextButton.cloneNode(true))
+    const newNextButton = document.querySelector(".carousel-button-next")
+
+    newNextButton.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      // Always move forward (show content from the right)
+      goToSlide(currentIndex + 1)
+      console.log("Next button clicked (moving forward)")
+    })
   }
-  
+
   if (prevButton) {
-    // Remove any existing event listenersS
-    prevButton.replaceWith(prevButton.cloneNode(true));
-    const newPrevButton = document.querySelector('.carousel-button-prev');
-    
-    newPrevButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      goToSlide(currentIndex - slidesPerView);
-      console.log('Previous button clicked (moving backward)'); // Debug log
-    });
+    // Remove any existing event listeners
+    prevButton.replaceWith(prevButton.cloneNode(true))
+    const newPrevButton = document.querySelector(".carousel-button-prev")
+
+    newPrevButton.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      // Always move backward (show content from the left)
+      goToSlide(currentIndex - 1)
+      console.log("Previous button clicked (moving backward)")
+    })
   }
-  
+
   if (indicators.length > 0) {
     indicators.forEach((indicator, i) => {
-      indicator.addEventListener('click', (e) => {
-        e.stopPropagation();
-        goToSlide(i * slidesPerView);
-      });
-    });
+      indicator.addEventListener("click", (e) => {
+        e.stopPropagation()
+        goToSlide(i * slidesPerView)
+      })
+    })
   }
-  
-  window.addEventListener('resize', updateCarousel);
-  
+
+  window.addEventListener("resize", updateCarousel)
+
   // Initialize
-  updateCarousel();
+  updateCarousel()
 }
   </script>
 </body>
