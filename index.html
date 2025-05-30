@@ -44,7 +44,7 @@ show_announcement: true
           {% assign featured_companies = site.data.portfolio | where: "featured", true | sort: 'name' %}
           {% for company in featured_companies %}
           <div class="carousel-slide">
-            <div class="portfolio-item relative bg-white p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
+            <div class="portfolio-item relative bg-white p-12 rounded-lg shadow-lg transition duration-300 hover:shadow-xl flex flex-col">
               {% if company.website %}
               <!-- Use a dedicated link element instead of an overlay -->
               <a href="{{ company.website }}" target="_blank" rel="noopener noreferrer" class="card-link">
