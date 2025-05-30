@@ -19,7 +19,7 @@
   category: investing
   logo: /assets/images/portfolio/wealthcabinet-official.png
   website: https://wealthcabinet.com/
-  featured: true
+  featured: false
   tags:
 
 - name: Posh AI
@@ -30,13 +30,13 @@
   featured: true
   tags:
 
-#- name: ScribeUp
-#  description: ScribeUp partners with financial institutions and fintechs to drive banking primacy through customer-focused recurring bill management.
-#  category: ai
-#  logo: /assets/images/portfolio/scribeup-official.png
-#  website: https://www.scribeup.io/
-#  featured: false
-#  tags:
+- name: ScribeUp
+  description: 
+  category: ai
+  logo: /assets/images/portfolio/scribeup-official.png
+  website: https://scribeup.io/
+  featured: true
+  tags:
 
 #- name: Nickels
 #  description: Nickels provides tools that help you assess your members’ finances and provide solutions where relevant.
